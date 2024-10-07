@@ -3,12 +3,15 @@ import {
   IonButton,
   IonCard,
   IonCardContent,
+  IonCol,
   IonContent,
   IonFooter,
+  IonGrid,
   IonHeader,
   IonIcon,
   IonInput,
   IonPage,
+  IonRow,
   IonTitle,
   IonToolbar,
   useIonRouter,
@@ -37,43 +40,53 @@ const Register: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonTitle className="ion-text-center">Create account</IonTitle>
-        <div className="ion-text-center">
-          <img src={loginImage} alt="login  image" />
-        </div>
-        <IonCard>
-          <IonCardContent>
-            <form>
-              <IonInput
-                type="email"
-                label="Email"
-                labelPlacement="floating"
-                fill="outline"
-                placeholder="enter email"
-              ></IonInput>
-              <IonInput
-                className="ion-margin-top"
-                type="password"
-                label="Password"
-                labelPlacement="floating"
-                fill="outline"
-                placeholder="enter password"
-              ></IonInput>
+        <IonGrid>
+          <IonRow class="ion-justify-content-center">
+            <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+              <IonTitle className="ion-text-center">Create account</IonTitle>
+              <div className="ion-text-center">
+                <img src={loginImage} alt="login  image" />
+              </div>
+            </IonCol>
+          </IonRow>
+          <IonRow class="ion-justify-content-center">
+            <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+              <IonCard>
+                <IonCardContent>
+                  <form>
+                    <IonInput
+                      type="email"
+                      label="Email"
+                      labelPlacement="floating"
+                      fill="outline"
+                      placeholder="enter email"
+                    ></IonInput>
+                    <IonInput
+                      className="ion-margin-top"
+                      type="password"
+                      label="Password"
+                      labelPlacement="floating"
+                      fill="outline"
+                      placeholder="enter password"
+                    ></IonInput>
 
-              <IonButton
-                className="ion-margin-top"
-                onClick={registerHandle}
-                expand="block"
-                color={"secondary"}
-                type="button"
-                routerLink="/register"
-              >
-                Create account
-                <IonIcon slot="end" icon={personCircleOutline}></IonIcon>
-              </IonButton>
-            </form>
-          </IonCardContent>
-        </IonCard>
+                    <IonButton
+                      className="ion-margin-top"
+                      onClick={registerHandle}
+                      expand="block"
+                      color={"secondary"}
+                      type="button"
+                      routerLink="/register"
+                    >
+                      Create account
+                      <IonIcon slot="end" icon={personCircleOutline}></IonIcon>
+                    </IonButton>
+                  </form>
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
