@@ -22,7 +22,6 @@ import loginImage from "../assets/WatchingYouEmoji.jpg";
 import logo from "../assets/logo.png";
 import Intro from "../components/Intro";
 import { Preferences } from "@capacitor/preferences";
-// import { Preferences } from '@capacitor/preferences';
 
 const INTRO_KEY = "intro-seen";
 
@@ -80,7 +79,11 @@ const Login: React.FC = () => {
                 <IonTitle className="ion-text-center">
                   Login to your account
                 </IonTitle>
-                <img src={loginImage} alt="login  image" />
+                <img
+                  src={loginImage}
+                  alt="login  image"
+                  style={{ display: "block" }}
+                />
               </div>
             </IonCol>
           </IonRow>

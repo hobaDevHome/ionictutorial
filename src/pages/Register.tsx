@@ -45,7 +45,11 @@ const Register: React.FC = () => {
             <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
               <IonTitle className="ion-text-center">Create account</IonTitle>
               <div className="ion-text-center">
-                <img src={loginImage} alt="login  image" />
+                <img
+                  src={loginImage}
+                  alt="login  image"
+                  style={{ display: "block" }}
+                />
               </div>
             </IonCol>
           </IonRow>
