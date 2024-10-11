@@ -115,6 +115,7 @@ const List: React.FC = () => {
           <IonSearchbar />
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         <IonRefresher slot="fixed" onIonRefresh={(ev) => doRefresh(ev)}>
           <IonRefresherContent />
@@ -141,17 +142,21 @@ const List: React.FC = () => {
           ))}
 
         {users.map((user, index) => (
-          <IonCard key={index} onClick={() => setSelectedUser(user)}>
-            <IonCardContent className="ion-no-padding">
+          <IonCard
+            key={index}
+            onClick={() => setSelectedUser(user)}
+            className="ion-margin"
+          >
+            <IonCardContent className="ion-padding">
               <IonItem lines="none">
-                <IonAvatar slot="start">
+                <IonAvatar slot="start" className="ion-margin-end">
                   <IonImg src={user.picture.large} />
                 </IonAvatar>
                 <IonLabel>
                   {user.name.first} {user.name.last}
                   <p>{user.email}</p>
                 </IonLabel>
-                <IonChip slot="end" color={"primary"}>
+                <IonChip slot="end" color={"primary"} className="ion-padding">
                   {user.nat}
                 </IonChip>
               </IonItem>
